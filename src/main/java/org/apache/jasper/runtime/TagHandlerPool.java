@@ -53,7 +53,9 @@ public class TagHandlerPool {
                 result = null;
             }
         }
-        if( result==null ) result=new PerThreadTagHandlerPool();
+        if( result==null ) {
+            result=new TagHandlerPool();
+        }
         result.init(config);
 
         return result;
